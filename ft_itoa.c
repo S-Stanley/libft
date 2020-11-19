@@ -34,13 +34,13 @@ int		ft_int_len(int n)
 	return (i + ft_check_pos(n));
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*res;
 	int		i;
 
 	i = 0;
-	res = malloc(sizeof(char) * ( ft_int_len(n) + 1 ) );
+	res = malloc(sizeof(char) * (ft_int_len(n) + 1));
 	if (!res)
 		return (NULL);
 	if (!ft_check_pos(n))

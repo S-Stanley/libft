@@ -13,7 +13,7 @@
 int		ft_strlcpy(char *dest, char *str, int n)
 {
 	int i;
-	
+
 	i = 0;
 	while (str[i] || i != n)
 	{

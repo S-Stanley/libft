@@ -17,7 +17,7 @@ int		ft_strlen(const char *str)
 	int		i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 		i++;
 	return (i);
 }
@@ -44,9 +44,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;
 
-	res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1) );
+	res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!res)
-		return (NULL);	
+		return (NULL);
 	ft_strlcat(res, s1);
 	ft_strlcat(res, s2);
 	return (res);

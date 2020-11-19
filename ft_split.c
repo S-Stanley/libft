@@ -47,7 +47,7 @@ char	*ft_split_the_tea(const char *str, char c, int start)
 	int		i;
 
 	i = 0;
-	res = malloc(sizeof(char) * (ft_what_is_next(str, c, start) + 1) );
+	res = malloc(sizeof(char) * (ft_what_is_next(str, c, start) + 1));
 	while (str[start] != c)
 	{
 		res[i] = str[start];

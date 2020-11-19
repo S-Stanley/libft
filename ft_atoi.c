@@ -20,7 +20,7 @@ int	ft_iswhitespace(char c)
 	{
 		return (1);
 	}
-	else 
+	else
 	{
 		return (0);
 	}

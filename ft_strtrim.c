@@ -33,11 +33,11 @@ int		ft_isit(const char *str, int start, const char *to_find)
 		start++;
 	}
 	if (i == ft_strlen(to_find))
-		return 1;
-	return 0;
+		return (1);
+	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	char	*res;
@@ -56,5 +56,5 @@ char *ft_strtrim(char const *s1, char const *set)
 		i++;
 		n++;
 	}
-	return (res);	
+	return (res);
 }
