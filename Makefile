@@ -27,4 +27,10 @@ all:
 clean:
 	rm -rf *.o
 fclean: 
-	rm -rf a.out
+	make clean
+	rm $(NAME)
+re: 
+	make fclean
+	make
+
+.PHONY: all clean fclean re
