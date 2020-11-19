@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sserbin <stanleyserbin@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/19 16:02:40 by sserbin           #+#    #+#             */
+/*   Updated: 2020/11/19 16:03:00 by sserbin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
 void	*ft_memchr(const void *s, int c0, int n)
@@ -7,7 +19,7 @@ void	*ft_memchr(const void *s, int c0, int n)
 	int				i;
 
 	c = c0;
-	str = s;
+	str = (char *) s;
 	i = 0;
 	while (i <= n)
 	{

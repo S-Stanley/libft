@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sserbin <stanleyserbin@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/19 16:05:22 by sserbin           #+#    #+#             */
+/*   Updated: 2020/11/19 16:05:23 by sserbin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-int		ft_strlen(char *str)
+int		ft_strlen(const char *str)
 {
 	int		i;
 
@@ -10,7 +22,7 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-int		ft_isit(char *str, int start, char *to_find)
+int		ft_isit(const char *str, int start, const char *to_find)
 {
 	int		i;
 
@@ -20,7 +32,7 @@ int		ft_isit(char *str, int start, char *to_find)
 		i++;
 		start++;
 	}
-	if (i == ft_strlen(i))
+	if (i == ft_strlen(to_find))
 		return 1;
 	return 0;
 }

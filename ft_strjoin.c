@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sserbin <stanleyserbin@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/19 16:04:24 by sserbin           #+#    #+#             */
+/*   Updated: 2020/11/19 16:04:25 by sserbin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-int		ft_strlen(char *str)
+int		ft_strlen(const char *str)
 {
 	int		i;
 
@@ -10,7 +22,7 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-void	ft_strlcat(char *dest, char *src)
+void	ft_strlcat(char *dest, const char *src)
 {
 	int		i;
 	int		n;

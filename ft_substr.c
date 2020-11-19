@@ -1,20 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sserbin <stanleyserbin@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/19 16:05:50 by sserbin           #+#    #+#             */
+/*   Updated: 2020/11/19 16:05:55 by sserbin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #define size_t int;
 
-int		ft_strlen(char *str, int i)
+int		ft_strlen(const char *str, int i)
 {
 	while (str[i])
 		i++;
 	return (i);
 }
 
-char	*ft_substr(char const *s, unsigned int start, int len)
+char	*ft_substr(char const *s, unsigned int start, int n)
 {
-	char	*res;
-	int		i;
+	char			*res;
+	int				i;
+	unsigned int	len;
 
 	i = 0;
-	res = malloc(sizeof(char) * (ft_strnlen(s, start) + 1));
+	len = (unsigned int) n;
+	res = malloc(sizeof(char) * (ft_strlen(s, start) + 1));
 	if (!res)
 	{
 		return (NULL);

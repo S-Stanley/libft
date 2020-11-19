@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sserbin <stanleyserbin@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/19 16:05:11 by sserbin           #+#    #+#             */
+/*   Updated: 2020/11/19 16:05:12 by sserbin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
+
 int		ft_strlen(char *str)
 {
 	int		i;
@@ -33,8 +47,8 @@ char	*ft_strnstr(char *str, char *to_find, int searchmax)
 	while (str[i] && i != searchmax)
 	{
 		if (ft_isit(str, to_find, i))
-			return (&i);
+			return (&str[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

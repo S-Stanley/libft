@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sserbin <stanleyserbin@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/19 16:04:06 by sserbin           #+#    #+#             */
+/*   Updated: 2020/11/19 16:04:06 by sserbin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-int		ft_count(char *str, char c)
+int		ft_count(const char *str, char c)
 {
 	int		i;
 	int		n;
@@ -16,7 +28,7 @@ int		ft_count(char *str, char c)
 	return (n + 1);
 }
 
-int		ft_what_is_next(char *str, char c, int start)
+int		ft_what_is_next(const char *str, char c, int start)
 {
 	int count;
 
@@ -29,17 +41,20 @@ int		ft_what_is_next(char *str, char c, int start)
 	return (count);
 }
 
-char	*ft_split_the_tea(char *str, char c, int start)
+char	*ft_split_the_tea(const char *str, char c, int start)
 {
 	char	*res;
-	
+	int		i;
+
+	i = 0;
 	res = malloc(sizeof(char) * (ft_what_is_next(str, c, start) + 1) );
 	while (str[start] != c)
 	{
-		res = str[start];
+		res[i] = str[start];
 		start++;
+		i++;
 	}
-	res[start] = '\0';
+	res[i] = 0;
 	return (res);
 }
 
@@ -64,6 +79,6 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
-	res[x] = '\0';
+	res[x] = 0;
 	return (res);
 }

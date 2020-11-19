@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sserbin <stanleyserbin@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/19 16:03:17 by sserbin           #+#    #+#             */
+/*   Updated: 2020/11/19 16:03:17 by sserbin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// Tester avec nouvelles variables en void *
+
 void	*ft_memmove(void *dist, const void *src, int n)
 {
 	int		i;
@@ -5,8 +19,8 @@ void	*ft_memmove(void *dist, const void *src, int n)
 	char	*src_b;
 	
 	i = 0;
-	dist_b = dist;
-	src_b = src;
+	dist_b = (char *) dist;
+	src_b = (char *) src;
 	while (i <= n)
 	{
 		dist_b[i] = src_b[i];
