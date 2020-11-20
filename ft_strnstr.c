@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int		ft_strlen(char *str)
+int		ft_strlen_count_again(char *str)
 {
 	int		i;
 
@@ -32,7 +32,7 @@ int		ft_isit(char *str, char *to_find, int start)
 		i++;
 		start++;
 	}
-	if (i == ft_strlen(to_find))
+	if (i == ft_strlen_count_again(to_find))
 		return (1);
 	return (0);
 }
@@ -41,7 +41,7 @@ char	*ft_strnstr(char *str, char *to_find, int searchmax)
 {
 	int		i;
 
-	if (ft_strlen(to_find) == 0)
+	if (ft_strlen_count_again(to_find) == 0)
 		return (str);
 	i = 0;
 	while (str[i] && i != searchmax)

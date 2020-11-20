@@ -43,7 +43,7 @@ int	ft_atoi(char *str)
 			pos = pos * -1;
 		i++;
 	}
-	while (str[i])
+	while (str[i] >= '1' && str[i] <= '9')
 	{
 		res = res * 10 + (str[i] - '0');
 		i++;

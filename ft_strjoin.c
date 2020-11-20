@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int		ft_strlen(const char *str)
+int		ft_strlen_count(const char *str)
 {
 	int		i;
 
@@ -44,7 +44,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;
 
-	res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	res = malloc(sizeof(char) * (ft_strlen_count(s1) + ft_strlen_count(s2) + 1));
 	if (!res)
 		return (NULL);
 	ft_strlcat(res, s1);
