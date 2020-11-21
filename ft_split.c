@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 int		ft_count(const char *str, char c)
 {
@@ -54,31 +55,59 @@ char	*ft_split_the_tea(const char *str, char c, int start)
 		start++;
 		i++;
 	}
-	res[i] = 0;
+	res[i] = '\0';
 	return (res);
 }
 
+int		ft_conststrlen(char const *str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+#include <stdio.h>
 char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		x;
+	int		n;
 	char	**res;
+	int		index;
 
 	res = malloc(sizeof(char *) * ft_count(s, c));
 	if (!res)
 		return (NULL);
 	i = 0;
 	x = 0;
+	n = 0;
+	index = 0;
+	res[x] = malloc(sizeof(char) * (ft_conststrlen(s) + 1));
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] != c) 
 		{
-			res[x] = ft_split_the_tea(s, c, i);
-			x++;
+			res[x][n] = s[i];
+			n++;
 			i++;
 		}
-		i++;
+		else
+		{
+			res[x][n] = 0;
+			x++;
+			res[x] = malloc(sizeof(char) * (ft_conststrlen(s) + 1));
+			i++;
+			n = 0;
+			while (s[i] == c)
+				i++;
+		}
 	}
+	x++;
+	printf("X %d", x);
 	res[x] = 0;
+ 	i = 0;
 	return (res);
 }
