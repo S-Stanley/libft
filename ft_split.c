@@ -69,7 +69,6 @@ int		ft_conststrlen(char const *str)
 	return (i);
 }
 
-#include <stdio.h>
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -106,7 +105,6 @@ char	**ft_split(char const *s, char c)
 		}
 	}
 	x++;
-	printf("X %d", x);
 	res[x] = 0;
  	i = 0;
 	return (res);

@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int		ft_strlen(const char *str, int i)
+int		ft_strlen_from_i(const char *str, int i)
 {
 	while (str[i])
 		i++;
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, int n)
 
 	i = 0;
 	len = (unsigned int)n;
-	res = malloc(sizeof(char) * (ft_strlen(s, start) + 1));
+	res = malloc(sizeof(char) * (ft_strlen_from_i(s, start) + 1));
 	if (!res)
 	{
 		return (NULL);

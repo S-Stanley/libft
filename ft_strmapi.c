@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int		ft_strlen(const char *str)
+int		ft_strlen_const(const char *str)
 {
 	int		i;
 
@@ -27,7 +27,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 	char	*res;
 
-	res = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	res = malloc(sizeof(char) * (ft_strlen_const(s) + 1));
 	if (!res)
 		return (NULL);
 	i = 0;

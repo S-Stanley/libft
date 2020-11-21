@@ -35,7 +35,7 @@ char			*ft_strdup(char *str);
 int				ft_strlcat(char *dest, char *str, int n);
 int				ft_strlcpy(char *dest, char *str, int n);
 int				ft_strlen(char *str);
-int				ft_strncmp(char *s1, char *s2);
+int				ft_strncmp(char *s1, char *s2, int n);
 char			*ft_strnstr(char *str, char *to_find, int searchmax);
 char			*ft_strrchr(const char *str, char c);
 int				ft_tolower(int a);

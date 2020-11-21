@@ -15,21 +15,22 @@
 char	*ft_strrchr(const char *str, int c2)
 {
 	int		i;
-	char	*res;
 	char	c;
-	int		find;
+	int		index;
+	char	*s;
 
 	c = c2;
 	i = 0;
-	res = malloc(sizeof(char));
-	find = 0;
-	while (str[i] + 1)
+	index = -1;
+	s = (char *)str;
+	while (str[i])
 	{
 		if (str[i] == c)
-			res[i] = str[i];
+			index = i;
 		i++;
 	}
-	if (find)
-		return (res);
-	return (NULL);
+
+	if (index == -1)
+		return (NULL);
+	return (&s[index]);
 }

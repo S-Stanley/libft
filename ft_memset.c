@@ -17,7 +17,7 @@ void	*ft_memset(void *data, int to_write, int size)
 
 	i = 0;
 	str = (char *)data;
-	while (i <= size)
+	while (i < size)
 	{
 		str[i] = to_write;
 		i++;

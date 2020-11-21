@@ -34,8 +34,6 @@ int		ft_int_len(int n)
 	return (i + ft_check_pos(n));
 }
 
-#include <stdio.h>
-
 void	ft_recursive(char *res, int *i, int n)
 {
 	if (n > 10)
