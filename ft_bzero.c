@@ -16,8 +16,8 @@ void	ft_bzero(void *str, int n)
 	char	*s;
 
 	i = 0;
-	s = str;
-	while (i != n)
+	s = (char *)str;
+	while (i <= n)
 	{
 		s[i] = 0;
 		i++;

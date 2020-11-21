@@ -34,6 +34,22 @@ int		ft_int_len(int n)
 	return (i + ft_check_pos(n));
 }
 
+#include <stdio.h>
+
+void	ft_recursive(char *res, int *i, int n)
+{
+	if (n > 10)
+	{
+		ft_recursive(res, i, n/10);
+		ft_recursive(res, i, n%10);
+	}
+	else {
+		res[*i] = n + '0';
+		*i = *i + 1;
+	}
+	
+}
+
 char	*ft_itoa(int n)
 {
 	char	*res;
@@ -43,15 +59,13 @@ char	*ft_itoa(int n)
 	res = malloc(sizeof(char) * (ft_int_len(n) + 1));
 	if (!res)
 		return (NULL);
-	if (!ft_check_pos(n))
+	if (ft_check_pos(n))
 	{
 		res[i] = '-';
 		n *= -1;
+		i++;
 	}
-	while (n > 0)
-	{
-		n = n / 10;
-		res[i] = n % 10;
-	}
+	ft_recursive(res, &i, n);
+	res[i] = '\0';
 	return (res);
 }
