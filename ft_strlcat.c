@@ -10,17 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 int		ft_strlcat(char *dest, char *str, int x)
 {
 	int		i;
 	int		n;
 
-	(void)x;
 	i = 0;
 	while (dest[i])
 		i++;
 	n = 0;
-	while (str[n] || dest[i])
+	while (str[n] && i < x - 1)
 	{
 		dest[i] = str[n];
 		i++;

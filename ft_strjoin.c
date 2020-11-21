@@ -22,7 +22,7 @@ int		ft_strlen_count(const char *str)
 	return (i);
 }
 
-void	ft_strlcat(char *dest, const char *src)
+void	ft_strlcat2(char *dest, const char *src)
 {
 	int		i;
 	int		n;
@@ -47,7 +47,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	res = malloc(sizeof(char) * (ft_strlen_count(s1) + ft_strlen_count(s2) + 1));
 	if (!res)
 		return (NULL);
-	ft_strlcat(res, s1);
-	ft_strlcat(res, s2);
+	ft_strlcat2(res, s1);
+	ft_strlcat2(res, s2);
 	return (res);
 }
