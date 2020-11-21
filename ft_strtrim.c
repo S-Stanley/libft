@@ -27,10 +27,8 @@ int		ft_isit_it(const char *str, int start, const char *to_find)
 	int		i;
 
 	i = 0;
-
 	if (ft_strlen_for_const(to_find) != (ft_strlen_for_const(str) - start))
 		return (0);
-
 	while (str[start] && str[start] == to_find[i])
 	{
 		i++;

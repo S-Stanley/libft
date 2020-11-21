@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Tester avec nouvelles variables en void */
-
 void	*ft_memmove(void *dist, const void *src, int n)
 {
 	int		i;

@@ -38,14 +38,14 @@ void	ft_recursive(char *res, int *i, int n)
 {
 	if (n > 10)
 	{
-		ft_recursive(res, i, n/10);
-		ft_recursive(res, i, n%10);
+		ft_recursive(res, i, n / 10);
+		ft_recursive(res, i, n % 10);
 	}
-	else {
+	else
+	{
 		res[*i] = n + '0';
 		*i = *i + 1;
 	}
-	
 }
 
 char	*ft_itoa(int n)

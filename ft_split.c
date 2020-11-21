@@ -29,17 +29,27 @@ int		ft_count(const char *str, char c)
 	return (n + 1);
 }
 
-int		ft_what_is_next(const char *str, char c, int start)
+int		ft_multi_fct(const char *str, char c, int start, int mode)
 {
 	int count;
 
-	count = 0;
-	while (str[start] && str[start] != c)
+	if (mode == 0)
 	{
-		start++;
-		count++;
+		count = 0;
+		while (str[start] && str[start] != c)
+		{
+			start++;
+			count++;
+		}
+		return (count);
 	}
-	return (count);
+	else
+	{
+		count = 0;
+		while (str[count])
+			count++;
+		return (count);
+	}
 }
 
 char	*ft_split_the_tea(const char *str, char c, int start)
@@ -48,7 +58,7 @@ char	*ft_split_the_tea(const char *str, char c, int start)
 	int		i;
 
 	i = 0;
-	res = malloc(sizeof(char) * (ft_what_is_next(str, c, start) + 1));
+	res = malloc(sizeof(char) * (ft_multi_fct(str, c, start, 0) + 1));
 	while (str[start] != c)
 	{
 		res[i] = str[start];
@@ -59,53 +69,39 @@ char	*ft_split_the_tea(const char *str, char c, int start)
 	return (res);
 }
 
-int		ft_conststrlen(char const *str)
+char	**ft_split2(char const *s, char c, int x, int i)
 {
-	int		i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	int		i;
-	int		x;
-	int		n;
 	char	**res;
-	int		index;
+	int		n;
 
-	res = malloc(sizeof(char *) * ft_count(s, c));
-	if (!res)
-		return (NULL);
-	i = 0;
-	x = 0;
 	n = 0;
-	index = 0;
-	res[x] = malloc(sizeof(char) * (ft_conststrlen(s) + 1));
+	if (!(res = malloc(sizeof(char *) * ft_count(s, c))))
+		return (NULL);
+	res[x] = malloc(sizeof(char) * (ft_multi_fct(s, 'c', 0, 1) + 1));
 	while (s[i])
 	{
-		if (s[i] != c) 
-		{
-			res[x][n] = s[i];
-			n++;
-			i++;
-		}
+		if (s[i] != c)
+			res[x][n++] = s[i++];
 		else
 		{
-			res[x][n] = 0;
-			x++;
-			res[x] = malloc(sizeof(char) * (ft_conststrlen(s) + 1));
+			res[x++][n] = 0;
+			res[x] = malloc(sizeof(char) * (ft_multi_fct(s, 'c', 0, 1) + 1));
 			i++;
 			n = 0;
 			while (s[i] == c)
 				i++;
 		}
 	}
-	x++;
-	res[x] = 0;
- 	i = 0;
+	res[x + 1] = 0;
 	return (res);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		i;
+	int		x;
+
+	i = 0;
+	x = 0;
+	return (ft_split2(s, c, i, x));
 }
