@@ -6,7 +6,7 @@
 #    By: Stanley <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/19 14:29:08 by Stanley           #+#    #+#              #
-#    Updated: 2020/11/19 14:29:10 by Stanley          ###   ########.fr        #
+#    Updated: 2020/11/24 16:07:20 by sserbin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ fclean:
 	make clean
 	rm $(NAME)
 re: 
-	make fclean
+	make fclean 
 	make
 bonus:	${OBJSBONUS}
 		ar rc ${NAME} ${OBJSBONUS}
