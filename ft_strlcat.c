@@ -10,22 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 int		ft_strlcat(char *dest, char *str, int x)
 {
 	int		i;
 	int		n;
+	int		z;
 
 	i = 0;
-	while (dest[i])
+	while (dest[i] && i < x)
 		i++;
 	n = 0;
+	z = i;
 	while (str[n] && i < x - 1)
 	{
 		dest[i] = str[n];
 		i++;
 		n++;
 	}
-	if (dest[i] != '\0')
+	if (i < x)
 		dest[i] = '\0';
-	return (n);
+	return (ft_strlen(str) + z);
 }

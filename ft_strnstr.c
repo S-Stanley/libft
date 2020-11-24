@@ -11,44 +11,49 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-int		ft_strlen_count_again(char *str)
+int		ft_isit(char *str, char *to_find, int start, int end)
 {
 	int		i;
 
 	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-int		ft_isit(char *str, char *to_find, int start)
-{
-	int		i;
-
-	i = 0;
-	while (str[start] && to_find[i] && str[start] == to_find[i])
+	while (str[start] && to_find[i] && str[start] == to_find[i] && start != end)
 	{
 		i++;
 		start++;
 	}
-	if (i == ft_strlen_count_again(to_find))
+	if (i == ft_strlen(to_find))
 		return (1);
 	return (0);
 }
 
+#include <stdio.h>
 char	*ft_strnstr(char *str, char *to_find, int searchmax)
 {
 	int		i;
 
-	if (ft_strlen_count_again(to_find) == 0)
+	if (ft_strlen(to_find) == 0)
 		return (str);
 	i = 0;
 	while (str[i] && i != searchmax)
 	{
-		if (ft_isit(str, to_find, i))
+		if (ft_isit(str, to_find, i, searchmax))
 			return (&str[i]);
 		i++;
 	}
 	return (NULL);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+// int main(void)
+// {
+// 	char	*s1 = "MZIRIBMZIRIBMZE123";
+// 	char	*s2 = "MZIRIBMZE";
+// 	size_t	max = strlen(s2);
+
+// 	char	*i1 = strnstr(s1, s2, max);
+// 	char	*i2 = ft_strnstr(s1, s2, max);
+// 	printf("%s\n%s", i1, i2);
+// }

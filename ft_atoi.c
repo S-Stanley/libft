@@ -28,9 +28,9 @@ int	ft_iswhitespace(char c)
 
 int	ft_atoi(char *str)
 {
-	int i;
-	int res;
-	int pos;
+	int			i;
+	long long	res;
+	long long	pos;
 
 	i = 0;
 	pos = 1;
@@ -43,7 +43,7 @@ int	ft_atoi(char *str)
 			pos = pos * -1;
 		i++;
 	}
-	while (str[i] >= '1' && str[i] <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = res * 10 + (str[i] - '0');
 		i++;
