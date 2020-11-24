@@ -10,17 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_strlcpy(char *dest, char *str, int n)
 {
 	int i;
 
 	i = 0;
-	while (str[i] && i != n)
+	while (str[i] && i != n && n > 1)
 	{
 		dest[i] = str[i];
 		i++;
+		n--;
 	}
-	if (i != n)
-		dest[i] = 0;
-	return (i);
+	if (n > 0)
+		dest[i] = '\0';
+	return (ft_strlen(str));
 }

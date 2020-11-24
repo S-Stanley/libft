@@ -29,6 +29,8 @@ char	*ft_strrchr(const char *str, int c2)
 			index = i;
 		i++;
 	}
+	if (str[i] == c)
+		index = i;
 	if (index == -1)
 		return (NULL);
 	return (&s[index]);

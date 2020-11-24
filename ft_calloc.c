@@ -20,6 +20,8 @@ void	*ft_calloc(int count, int size)
 
 	i = 0;
 	total = malloc(size);
+	if (!total)
+		return (NULL);
 	str = (char *)total;
 	while (i <= count)
 	{
