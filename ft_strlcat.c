@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int		ft_strlcat(char *dest, char *str, int x)
 {
 	int		i;

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 int		ft_isit(char *str, char *to_find, int start, int end)
@@ -28,7 +27,6 @@ int		ft_isit(char *str, char *to_find, int start, int end)
 	return (0);
 }
 
-#include <stdio.h>
 char	*ft_strnstr(char *str, char *to_find, int searchmax)
 {
 	int		i;
@@ -44,16 +42,3 @@ char	*ft_strnstr(char *str, char *to_find, int searchmax)
 	}
 	return (NULL);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-// int main(void)
-// {
-// 	char	*s1 = "MZIRIBMZIRIBMZE123";
-// 	char	*s2 = "MZIRIBMZE";
-// 	size_t	max = strlen(s2);
-
-// 	char	*i1 = strnstr(s1, s2, max);
-// 	char	*i2 = ft_strnstr(s1, s2, max);
-// 	printf("%s\n%s", i1, i2);
-// }

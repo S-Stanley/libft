@@ -17,6 +17,8 @@ int		ft_strlcpy(char *dest, char *str, int n)
 	int i;
 
 	i = 0;
+	if (dest == NULL || str == NULL)
+		return (0);
 	while (str[i] && i != n && n > 1)
 	{
 		dest[i] = str[i];

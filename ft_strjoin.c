@@ -12,42 +12,41 @@
 
 #include "libft.h"
 
-int		ft_len_count(const char *str)
-{
-	int		i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-void	ft_strlcat2(char *dest, const char *src)
+void	ft_concat(const char *s1, const char *s2, char *res)
 {
 	int		i;
 	int		n;
 
 	i = 0;
-	n = 0;
-	while (dest[i])
-		i++;
-	while (src[n])
+	while (s1[i])
 	{
-		dest[i] = src[n];
+		res[i] = s1[i];
 		i++;
-		n++;
 	}
-	dest[i] = '\0';
+	n = i;
+	i = 0;
+	while (s2[i])
+	{
+		res[n] = s2[i];
+		n++;
+		i++;
+	}
+	res[n] = '\0';
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;
+	int		len_s1;
+	int		len_s2;
 
-	res = malloc(sizeof(char) * (ft_len_count(s1) + ft_len_count(s2) + 1));
+	len_s1 = ft_strlen((char *)s1);
+	len_s2 = ft_strlen((char *)s2);
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	res = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
 	if (!res)
 		return (NULL);
-	ft_strlcat2(res, s1);
-	ft_strlcat2(res, s2);
+	ft_concat(s1, s2, res);
 	return (res);
 }
