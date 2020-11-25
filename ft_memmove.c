@@ -10,19 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dist, const void *src, int n)
-{
-	int		i;
-	char	*dist_b;
-	char	*src_b;
+#include "libft.h"
 
+void	*ft_memmove(void *dst, const void *src, int n)
+{
+	int				i;
+	unsigned char	*dst_b;
+	unsigned char	*src_b;
+
+	if (dst == NULL && src == NULL)
+		return (dst);
 	i = 0;
-	dist_b = (char *)dist;
-	src_b = (char *)src;
-	while (i <= n)
+	dst_b = (unsigned char *)dst;
+	src_b = (unsigned char *)src;
+	if (src_b < dst_b)
 	{
-		dist_b[i] = src_b[i];
-		i++;
+		while (i++ < n)
+			dst_b[n - i] = src_b[n - i];
 	}
-	return (dist);
+	else
+	{
+		while (i < n - 1)
+		{
+			dst_b[i] = src_b[i];
+			i++;
+		}
+	}
+	return (dst);
 }

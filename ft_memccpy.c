@@ -10,25 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memccpy(const void *src, const void *dest, int c, int size)
+#include <stdlib.h>
+
+void	*ft_memccpy(const void *dest, const void *src, int c, int size)
 {
 	int		i;
 	char	*dest2;
 	char	*src2;
-	void	*dest3;
+	char	x;
 
 	i = 0;
 	dest2 = (char *)dest;
 	src2 = (char *)src;
-	dest3 = (void *)dest;
+	x = (unsigned char)c;
 	while (i < size)
 	{
 		dest2[i] = src2[i];
-		if (src2[i] == c)
+		if (src2[i] == x)
 		{
-			return (&dest3[i + 1]);
+			return (&dest2[i + 1]);
 		}
 		i++;
 	}
-	return (dest3);
+	return (NULL);
 }

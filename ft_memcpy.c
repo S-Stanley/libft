@@ -10,12 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memcpy(void *dist, const void *src, int n)
 {
 	int		i;
 	char	*dist_b;
 	char	*src_b;
 
+	if (dist == NULL && src == NULL)
+		return NULL;
 	dist_b = (char *)dist;
 	src_b = (char *)src;
 	i = 0;
