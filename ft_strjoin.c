@@ -40,10 +40,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len_s1;
 	int		len_s2;
 
-	len_s1 = ft_strlen((char *)s1);
-	len_s2 = ft_strlen((char *)s2);
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
+	len_s1 = ft_strlen((char *)s1);
+	len_s2 = ft_strlen((char *)s2);
 	res = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
 	if (!res)
 		return (NULL);
