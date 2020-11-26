@@ -54,7 +54,7 @@ char	*ft_itoa(int n)
 
 	pos = ft_check_pos(n);
 	size = ft_int_len(n) + pos;
-	res = malloc(sizeof(char) * (size));
+	res = malloc(sizeof(char) * (size + 1));
 	if (n == -2147483648)
 		return (ft_int_min(res, "-2147483648"));
 	if (!res)

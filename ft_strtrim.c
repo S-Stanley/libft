@@ -37,6 +37,23 @@ int		ft_continue(char *str, int i, char *set)
 	return (0);
 }
 
+int		ft_howmuch(char *s1, char *set)
+{
+	int		i;
+	int		size;
+
+	i = 0;
+	size = 0;
+	while (ft_search(s1[i], (char *)set) && s1[i])
+		i++;
+	while (s1[i] && ft_continue((char *)s1, i, (char *)set))
+	{
+		size++;
+		i++;
+	}
+	return (size);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
@@ -45,7 +62,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	res = malloc(sizeof(char) * (ft_strlen((char *)s1) + 1));
+	res = malloc(sizeof(char) * (ft_howmuch((char *)s1, (char *)set) + 1));
 	if (!res)
 		return (NULL);
 	i = 0;

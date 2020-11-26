@@ -10,23 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(int count, int size)
 {
 	int		i;
 	void	*total;
-	char	*str;
 
 	i = 0;
-	total = malloc(size);
+	total = malloc(count * size);
 	if (!total)
 		return (NULL);
-	str = (char *)total;
-	while (i <= count)
-	{
-		str[i] = 0;
-		i++;
-	}
-	return (str);
+	return (ft_memset(total, 0, count * size));
 }

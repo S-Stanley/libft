@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_iswhitespace(char c)
 {
 	if (c >= 9 && c <= 13)
@@ -26,7 +28,7 @@ int	ft_iswhitespace(char c)
 	}
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int			i;
 	long long	res;
@@ -35,7 +37,7 @@ int	ft_atoi(char *str)
 	i = 0;
 	pos = 1;
 	res = 0;
-	while (ft_iswhitespace(str[i]))
+	while (str[i] && ft_iswhitespace(str[i]))
 		i++;
 	while (str[i] == '+' || str[i] == '-')
 	{
@@ -43,10 +45,14 @@ int	ft_atoi(char *str)
 			pos = pos * -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		res = res * 10 + (str[i] - '0');
 		i++;
+		if (res > 2147483647 && pos == 1)
+			return (-1);
+		if (res > 2147483648 && pos == -1)
+			return (0);
 	}
 	return (res * pos);
 }

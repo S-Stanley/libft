@@ -22,7 +22,7 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
-int				ft_atoi(char *str);
+int				ft_atoi(const char *str);
 void			ft_bzero(void *str, int n);
 void			*ft_calloc(int count, int size);
 int				ft_isalnum(int c);
