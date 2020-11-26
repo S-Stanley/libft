@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 int		ft_count(const char *str, char c)
@@ -92,7 +91,8 @@ char	**ft_split2(char const *s, char c, int x, int i)
 				i++;
 		}
 	}
-	res[x + 1] = 0;
+	res[x][n] = '\0';
+	res[x + 1] = NULL;
 	return (res);
 }
 
@@ -101,7 +101,12 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		x;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	x = 0;
-	return (ft_split2(s, c, i, x));
+	while (s[i] == c)
+		i++;
+	return (ft_split2(s, c, x, i));
 }
+

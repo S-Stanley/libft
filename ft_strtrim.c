@@ -10,32 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int		ft_strlen_for_const(const char *str)
+int		ft_search(char c, char *set)
 {
 	int		i;
 
 	i = 0;
-	while (str[i])
+	while (set[i])
+	{
+		if (c == set[i])
+			return (1);
 		i++;
-	return (i);
+	}
+	return (0);
 }
 
-int		ft_isit_it(const char *str, int start, const char *to_find)
+int		ft_continue(char *str, int i, char *set)
 {
-	int		i;
-
-	i = 0;
-	if (ft_strlen_for_const(to_find) != (ft_strlen_for_const(str) - start))
-		return (0);
-	while (str[start] && str[start] == to_find[i])
+	while(str[i])
 	{
+		if (!ft_search(str[i], set))
+			return (1);
 		i++;
-		start++;
 	}
-	if (i == ft_strlen_for_const(to_find))
-		return (1);
 	return (0);
 }
 
@@ -45,18 +43,21 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*res;
 	int		n;
 
-	res = malloc(sizeof(char) * (ft_strlen_for_const(s1) + 1));
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	res = malloc(sizeof(char) * (ft_strlen((char *)s1) + 1));
 	if (!res)
 		return (NULL);
 	i = 0;
 	n = 0;
-	while (s1[i] == set[i])
+	while (ft_search(s1[i], (char *)set) && s1[i])
 		i++;
-	while (!ft_isit_it(s1, i, set))
+	while (s1[i] && ft_continue((char *)s1, i, (char *)set))
 	{
 		res[n] = s1[i];
 		i++;
 		n++;
 	}
+	res[n] = '\0';
 	return (res);
 }
