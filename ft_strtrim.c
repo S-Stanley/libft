@@ -28,7 +28,7 @@ int		ft_search(char c, char *set)
 
 int		ft_continue(char *str, int i, char *set)
 {
-	while(str[i])
+	while (str[i])
 	{
 		if (!ft_search(str[i], set))
 			return (1);

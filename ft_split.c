@@ -109,4 +109,3 @@ char	**ft_split(char const *s, char c)
 		i++;
 	return (ft_split2(s, c, x, i));
 }
-
