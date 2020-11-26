@@ -83,16 +83,17 @@ char	**ft_split2(char const *s, char c, int x, int i)
 			res[x][n++] = s[i++];
 		else
 		{
-			res[x++][n] = 0;
-			res[x] = malloc(sizeof(char) * (ft_multi_fct(s, 'c', 0, 1) + 1));
+			res[x][n] = '\0';
+			res[++x] = malloc(sizeof(char) * (ft_multi_fct(s, 'c', 0, 1) + 1));
 			i++;
 			n = 0;
 			while (s[i] == c)
 				i++;
 		}
 	}
-	res[x][n] = '\0';
-	res[x + 1] = NULL;
+	if (s[ft_strlen((char *)s) - 1] != c)
+		res[x++][n] = '\0';
+	res[x] = NULL;
 	return (res);
 }
 
