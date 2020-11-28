@@ -21,7 +21,7 @@ FLAGS = -Wall -Wextra -Werror
 .c.o:
 	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
-${NAME}:	${OBJS}
+$(NAME):	${OBJS}
 			ar rc ${NAME} ${OBJS}
 all: 
 	${NAME}

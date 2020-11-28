@@ -6,7 +6,7 @@
 /*   By: Stanley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 14:30:39 by Stanley           #+#    #+#             */
-/*   Updated: 2020/11/19 14:30:41 by Stanley          ###   ########.fr       */
+/*   Updated: 2020/11/28 19:48:56 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_atoi(const char *str)
 	res = 0;
 	while (str[i] && ft_iswhitespace(str[i]))
 		i++;
-	while (str[i] == '+' || str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
 			pos = pos * -1;

@@ -32,7 +32,7 @@ int				ft_isascii(int c);
 int				ft_isprint(int c);
 void			*ft_memccpy(void *dest, const void *src, int c, int size);
 void			*ft_memchr(const void *s, int c0, int n);
-int				*ft_memcmp(const void *s1, const void *s2, int n);
+int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memcpy(void *dist, const void *src, int n);
 void			*ft_memmove(void *dst, const void *src, int n);
 void			*ft_memset(void *data, int to_write, int size);
