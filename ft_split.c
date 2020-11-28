@@ -65,7 +65,9 @@ char	**ft_split(const char *str, char c)
 	int		start;
 	int		size;
 
-	if (!(res = malloc(sizeof(char *) * ft_count(str, c))) || !str)
+	if (!str)
+		return (NULL);
+	if (!(res = malloc(sizeof(char *) * ft_count(str, c))))
 		return (NULL);
 	i = 0;
 	x = -1;
