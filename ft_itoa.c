@@ -6,7 +6,7 @@
 /*   By: sserbin <stanleyserbin@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 16:02:19 by sserbin           #+#    #+#             */
-/*   Updated: 2020/12/01 15:56:46 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/12/01 15:58:27 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ char	*ft_itoa(int n)
 	int		pos;
 
 	res = malloc(sizeof(char) * (size + 1));
-	if (n == -2147483648)
-		return (ft_int_min(res, "-2147483648"));
 	if (!res)
 		return (NULL);
+	if (n == -2147483648)
+                return (ft_int_min(res, "-2147483648"));
 	pos = ft_check_pos(n);
         size = ft_int_len(n) + pos;
 	res[size--] = '\0';
