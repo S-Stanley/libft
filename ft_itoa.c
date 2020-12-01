@@ -6,7 +6,7 @@
 /*   By: sserbin <stanleyserbin@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 16:02:19 by sserbin           #+#    #+#             */
-/*   Updated: 2020/12/01 15:58:27 by sserbin          ###   ########.fr       */
+/*   Updated: 2020/12/01 16:01:34 by sserbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_check_pos(int n)
 	return (1);
 }
 
-int		ft_int_len(int n)
+int		ft_int_len(long int n)
 {
 	int		i;
 
@@ -52,6 +52,8 @@ char	*ft_itoa(int n)
 	int		size;
 	int		pos;
 
+	pos = ft_check_pos(n);
+        size = ft_int_len(n) + pos;
 	res = malloc(sizeof(char) * (size + 1));
 	if (!res)
 		return (NULL);
