@@ -6,7 +6,7 @@
 #    By: Stanley <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/19 14:29:08 by Stanley           #+#    #+#              #
-#    Updated: 2020/11/24 16:07:20 by sserbin          ###   ########.fr        #
+#    Updated: 2020/12/02 20:25:58 by sserbin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ FLAGS = -Wall -Wextra -Werror
 .c.o:
 	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
-$(NAME):	${OBJS}
+${NAME}:	${OBJS}
 			ar rc ${NAME} ${OBJS}
 all: 
 	${NAME}
@@ -29,7 +29,7 @@ clean:
 	rm -rf *.o
 fclean: 
 	make clean
-	rm $(NAME)
+	rm ${NAME}
 re: 
 	make fclean 
 	make
