@@ -14,22 +14,22 @@
 
 size_t	ft_strlcat(char *dest, char *str, size_t x)
 {
-	size_t	i;
-	int		n;
-	size_t	z;
+	int	i;
+	int	n;
+	int	z;
 
 	i = 0;
-	while (dest[i] && i < x)
+	while (dest[i] && i < (int)x)
 		i++;
 	n = 0;
 	z = i;
-	while (str[n] && i < x - 1)
+	while (str[n] && i < (int)x - 1)
 	{
 		dest[i] = str[n];
 		i++;
 		n++;
 	}
-	if (i < x)
+	if (i < (int8_t)x)
 		dest[i] = '\0';
 	return (ft_strlen(str) + z);
 }
