@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int		ft_strlcat(char *dest, char *str, int x)
+int		ft_strlcat(char *dest, char *str, size_t x)
 {
-	int		i;
+	size_t	i;
 	int		n;
 	int		z;
 

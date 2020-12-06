@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memccpy(const void *dest, const void *src, int c, int size)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t size)
 {
-	int		i;
+	size_t	i;
 	char	*dest2;
 	char	*src2;
 	char	x;

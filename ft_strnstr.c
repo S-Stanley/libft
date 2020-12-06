@@ -14,7 +14,7 @@
 
 int		ft_isit(char *str, char *to_find, int start, int end)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
 	while (str[start] && to_find[i] && str[start] == to_find[i] && start != end)
@@ -27,9 +27,9 @@ int		ft_isit(char *str, char *to_find, int start, int end)
 	return (0);
 }
 
-char	*ft_strnstr(char *str, char *to_find, int searchmax)
+char	*ft_strnstr(char *str, char *to_find, size_t searchmax)
 {
-	int		i;
+	size_t	i;
 
 	if (ft_strlen(to_find) == 0)
 		return (str);

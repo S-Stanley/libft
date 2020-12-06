@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *str, int n)
+#include "libft.h"
+
+void	ft_bzero(void *str, size_t n)
 {
-	int		i;
+	size_t	i;
 	char	*s;
 
 	i = 0;

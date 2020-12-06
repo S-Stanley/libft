@@ -12,12 +12,10 @@
 
 #include "libft.h"
 
-void	*ft_calloc(int count, int size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int		i;
 	void	*total;
 
-	i = 0;
 	total = malloc(count * size);
 	if (!total)
 		return (NULL);
